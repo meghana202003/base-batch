@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="products"></div>
+    <script>
+        let myPromise=new Promise((resolve,reject)=>{
+            let data=fetch("https://fakestoreapi.com/products")
+            data.then((res)=>{
+                res.json().then((r)=>{
+                resolve(r)
+            }).catch((err)=>{
+                reject(err,"error")
+            })
+        })
+    })
+    myPromise.then((d)=>{
+        console.log(d);
+    })
+    let products=document.getElementById("products")
+    console.log(products);
+    myPromise.then((d)=>{
+console.log(d);
+products.innerHTML=d.map((obj)=>{
+    return ` <h1>${obj.title}</h1>
+      <img src="${obj.image}" >
+      <p>${obj.description.slice(0,100)}</p>`
+      console.log(obj.image);
+    })
+})
+    </script>
+</body>
+</html>

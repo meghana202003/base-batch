@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img id="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFH2gJDZoP3y7p8MmZ5d8krusj4oo1AlXJFA&s" alt="Hover to change image">
+    </div>
+    <script>
+        let img=document.querySelector("#img")
+        img.addEventListener("mouseover",()=>{
+            img.src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFH2gJDZoP3y7p8MmZ5d8krusj4oo1AlXJFA&s"
+        })
+        img.addEventListener("mouseout",()=>{
+            img.src="https://i.pinimg.com/236x/91/61/96/916196543e69b4b95cc27ffb7013e965.jpg"
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Study Tracker</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+h2 {
+    text-align: center;
+}
+
+input, button, select {
+    padding: 8px;
+    margin: 5px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    background: #eee;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Study Tracker</h2>
+
+    <!-- Input -->
+    <input type="text" id="taskInput" placeholder="Enter study task">
+    <button onclick="addTask()">Add</button>
+
+    <br>
+
+    <!-- Search -->
+    <input type="text" id="searchInput" placeholder="Search task" onkeyup="renderTasks()">
+
+    <!-- Filter -->
+    <select id="filter" onchange="renderTasks()">
+        <option value="all">All</option>
+        <option value="completed">Completed</option>
+        <option value="pending">Pending</option>
+    </select>
+
+    <!-- Task List -->
+    <div id="taskList"></div>
+</div>
+
+<script>
+
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+// Add Task
+function addTask() {
+    let input = document.getElementById("taskInput");
+    let text = input.value.trim();
+
+    if (text === "") {
+        alert("Enter a task");
+        return;
+    }
+
+    tasks.push({ text: text, completed: false });
+    input.value = "";
+    saveAndRender();
+}
+
+// Save + Render
+function saveAndRender() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+    renderTasks();
+}
+
+// Render Tasks
+function renderTasks() {
+    let list = document.getElementById("taskList");
+    let search = document.getElementById("searchInput").value.toLowerCase();
+    let filter = document.getElementById("filter").value;
+
+    list.innerHTML = "";
+
+    tasks.forEach((task, index) => {
+
+        if (task.text.toLowerCase().includes(search)) {
+
+            if (filter === "completed" && !task.completed) return;
+            if (filter === "pending" && task.completed) return;
+
+            let div = document.createElement("div");
+            div.className = "task";
+
+            let text = document.createElement("span");
+            text.innerText = task.text;
+            if (task.completed) text.classList.add("completed");
+
+            div.appendChild(text);
+
+            let buttons = document.createElement("div");
+
+            // Complete Button
+            let completeBtn = document.createElement("button");
+            completeBtn.innerText = "✔";
+            completeBtn.onclick = () => toggleComplete(index);
+
+            // Edit Button
+            let editBtn = document.createElement("button");
+            editBtn.innerText = "Edit";
+            editBtn.onclick = () => editTask(index);
+
+            // Delete Button
+            let deleteBtn = document.createElement("button");
+            deleteBtn.innerText = "Delete";
+            deleteBtn.onclick = () => deleteTask(index);
+
+            buttons.appendChild(completeBtn);
+            buttons.appendChild(editBtn);
+            buttons.appendChild(deleteBtn);
+
+            div.appendChild(buttons);
+
+            list.appendChild(div);
+        }
+    });
+}
+
+// Toggle Complete
+function toggleComplete(index) {
+    tasks[index].completed = !tasks[index].completed;
+    saveAndRender();
+}
+
+// Delete Task
+function deleteTask(index) {
+    tasks.splice(index, 1);
+    saveAndRender();
+}
+
+// Edit Task
+function editTask(index) {
+    let newText = prompt("Edit task:", tasks[index].text);
+    if (newText !== null && newText.trim() !== "") {
+        tasks[index].text = newText;
+        saveAndRender();
+    }
+}
+
+// Initial Load
+renderTasks();
+
+</script>
+
+</body>
+</html>

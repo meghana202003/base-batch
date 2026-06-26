@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#navbar {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 0 20px;
+    height: 110px;
+}
+
+#logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#new-container {
+    color: white;
+    cursor: pointer;
+    position: relative;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+#sports-container {
+    color: white;
+    cursor: pointer;
+    position: relative;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+#men-container {
+    color: white;
+    cursor: pointer;
+    position: relative;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+#women-container {
+    color: white;
+    cursor: pointer;
+    position: relative;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+#motor-container {
+    color: white;
+    cursor: pointer;
+    position: relative;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+#life-container {
+    color: white;
+    cursor: pointer;
+    position: relative;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+#kids-container {
+    color: white;
+    cursor: pointer;
+    position: relative;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+#sale-container {
+    color: white;
+    cursor: pointer;
+    position: relative;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+#sale-label {
+    color: red;
+}
+
+/* Dropdowns */
+
+#new-drop {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: white;
+    border-top: 2px solid goldenrod;
+    width: 200px;
+    padding: 10px;
+}
+
+#sports-drop {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: white;
+    border-top: 2px solid goldenrod;
+    width: 200px;
+    padding: 10px;
+}
+
+#men-drop {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: white;
+    border-top: 2px solid goldenrod;
+    width: 200px;
+    padding: 10px;
+}
+
+#women-drop {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: white;
+    border-top: 2px solid goldenrod;
+    width: 200px;
+    padding: 10px;
+}
+
+#motor-drop {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: white;
+    border-top: 2px solid goldenrod;
+    width: 200px;
+    padding: 10px;
+}
+
+#life-drop {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: white;
+    border-top: 2px solid goldenrod;
+    width: 200px;
+    padding: 10px;
+}
+
+#kids-drop {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: white;
+    border-top: 2px solid goldenrod;
+    width: 200px;
+    padding: 10px;
+}
+
+#sale-drop {
+    display: none;
+    position: absolute;
+    top: 55px;
+    left: 0;
+    background-color: white;
+    border-top: 2px solid goldenrod;
+    width: 200px;
+    padding: 10px;
+}
+
+.dd {
+    background-color: red;
+    color: black;
+    padding: 5px 0;
+    font-size: 13px;
+    cursor: pointer;
+    border: 0px solid black;
+}
+
+
+#suj{
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    justify-content: space-around;
+    text-align: right;
+    font-size: 20px;
+    position: absolute;
+    left: 1200px;
+    color: white;
+}

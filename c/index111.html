@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Tracker</title>
+    <link rel="stylesheet" href="stylee.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<center>
+    <!-- Navbar -->
+    <header>
+        <h1>📚 Study Tracker</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#tasks">Tasks</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+    <section id="home">
+    <h2>Welcome to Study Tracker 📚</h2>
+    <p>Organize your daily study tasks easily!</p>
+</section>
+<section id="tasks">
+    <div class="container">
+        <h2>✨ Manage Your Study Tasks</h2>
+
+       
+        <ul id="taskList"></ul>
+                <div class="task-input">
+    <input type="text" id="taskInput" placeholder="Enter task">
+    <input type="number" id="hoursInput" placeholder="Hours" min="1">
+    <button id="addBtn">➕ Add</button>
+</div>
+
+<!-- Chart -->
+<canvas id="studyChart"></canvas>
+    </div>
+</center>
+</section>
+<section id="about">
+    <h2>About</h2>
+    <p>This is a simple study tracker website built using HTML, CSS, and JavaScript.</p>
+</section>
+
+
+    Main Section
+    <main>
+        <div class="container">
+            <h2>✨ Manage Your Study Tasks</h2>
+
+            <!-- Input -->
+            <div class="task-input">
+                <input type="text" id="taskInput" placeholder="Enter your task">
+                <button onclick="addTask()">➕ Add</button>
+            </div>
+
+            <!-- Task List -->
+            <ul id="taskList"></ul>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>🌈 Made with HTML, CSS & JS</p>
+    </footer>
+
+    <script src="stylee.js"></script>
+</body>
+</html>

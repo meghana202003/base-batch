@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUMA Nav</title>
+    <link rel="stylesheet" href="nav2.css">
+</head>
+<body>
+
+    <div id="navbar">
+
+        <div id="logo">PUMA</div>
+
+        <div id="new-container">
+            <b>New</b>
+            <div id="new-drop">
+                <div class="dd">Men's New Arrivals</div>
+                <div class="dd">Women's New Arrivals</div>
+                <div class="dd">Kid's New Arrivals</div>
+                <div class="dd">PUMA x POKEMON</div>
+                <div class="dd">PUMA x RCB</div>
+                <div class="dd">Ballet Flats</div>
+                <div class="dd">Run Clubs</div>
+            </div>
+        </div>
+
+        <div id="sports-container">
+            <b>Sports</b>
+            <div id="sports-drop">
+                <div class="dd">Running Store</div>
+                <div class="dd">NITRO™</div>
+                <div class="dd">Road Running</div>
+                <div class="dd">Gym Wear</div>
+                <div class="dd">PUMA x HYROX</div>
+                <div class="dd">Bengaluru FC</div>
+                <div class="dd">Manchester City FC</div>
+                <div class="dd">PUMA x RCB</div>
+                <div class="dd">Cricket Shoes - Rubber</div>
+                <div class="dd">Cricket Store</div>
+            </div>
+        </div>
+
+        <div id="men-container">
+            <b>Men</b>
+            <div id="men-drop">
+                <div class="dd">New & Trending</div>
+                <div class="dd">Sale</div>
+                <div class="dd">PUMA x RCB</div>
+                <div class="dd">Classics</div>
+                <div class="dd">Sneakers</div>
+                <div class="dd">Running</div>
+                <div class="dd">Football</div>
+                <div class="dd">Cricket</div>
+            </div>
+        </div>
+
+        <div id="women-container">
+            <b>Women</b>
+            <div id="women-drop">
+                <div class="dd">New & Trending</div>
+                <div class="dd">Sale</div>
+                <div class="dd">Ballet Flats</div>
+                <div class="dd">Classics</div>
+                <div class="dd">Sneakers</div>
+                <div class="dd">Running</div>
+                <div class="dd">Sports Bras</div>
+                <div class="dd">Tracksuits</div>
+            </div>
+        </div>
+
+        <div id="motor-container">
+            <b>Motorsport</b>
+            <div id="motor-drop">
+                <div class="dd">Motorsport Store</div>
+                <div class="dd">Scuderia Ferrari</div>
+                <div class="dd">BMW M Motorsport</div>
+                <div class="dd">McLAREN</div>
+                <div class="dd">FORMULA 1</div>
+                <div class="dd">Porsche Legacy</div>
+            </div>
+        </div>
+
+        <div id="life-container">
+            <b>Lifestyle</b>
+            <div id="life-drop">
+                <div class="dd">Sneaker Store</div>
+                <div class="dd">Travel Store</div>
+                <div class="dd">Classics</div>
+                <div class="dd">Speedcat</div>
+                <div class="dd">PUMA x POKEMON</div>
+                <div class="dd">FENTY x PUMA</div>
+            </div>
+        </div>
+
+        <div id="kids-container">
+            <b>Kids</b>
+            <div id="kids-drop">
+                <div class="dd">Kid's New Arrivals</div>
+                <div class="dd">Shoes</div>
+                <div class="dd">Clothing</div>
+                <div class="dd">Accessories</div>
+            </div>
+        </div>
+
+        <div id="sale-container">
+            <b id="sale-label">Sale</b>
+            <div id="sale-drop">
+                <div class="dd">Men's Sale</div>
+                <div class="dd">Women's Sale</div>
+                <div class="dd">Kid's Sale</div>
+            </div>
+        </div>
+
+    <div id="suj">
+    <b>SEARCH</b>
+    <b>❤️</b>
+    <b>🛒</b>
+    <b>👤</b>
+    </div>
+
+    <script src="pro.js"></script>
+</body>
+</html>

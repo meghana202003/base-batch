@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x=new Promise((resolve,reject)=>{
+            let bry=false;
+            if(bry){
+                resolve("order got deliverd");
+            }else{
+                reject("order got cancelled");
+            }
+        })
+            x.then((e)=>{
+                console.log(e);
+            }).catch((e)=>{
+            console.log(e);
+         } )
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment</title>
+    <style>
+        
+        body>div:nth-child(3)
+        {
+          margin: 0px;
+          padding-bottom: 300px;
+          display: flex;
+          height: 100%;
+          background-color: skyblue;
+          width: 100%;
+          justify-content: space-around;
+          size-adjust: cover;
+            animation-name: sky;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
+        body>div:nth-child(3)>div:nth-child(4)
+        {
+            position: absolute;
+            justify-content: space-between;
+            align-items: center;
+            animation-name: birds;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
+        
+        body>div:nth-child(4)
+        {
+            margin: 0px;
+            padding-bottom: 60px;;
+            height: 300px;
+            background-color: black;
+            width: 100%;
+            position: relative;
+            size-adjust: cover;
+            animation-name: road;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
+        body>div:nth-child(4)>div:nth-child(1)
+        {
+            position: absolute;
+            animation-name: car;
+            animation-duration: 5s;
+            animation-timing-function: linear right;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+
+        }
+        @keyframes car{
+            0%
+            {
+                right: 1000px;
+            }
+            100%{
+                right
+                : 100px;
+            }
+        }
+            @keyframes bike{
+            0%
+            {
+                left: 1000px;
+            }
+            100%{
+                left : 100px;
+            }
+        }
+        @keyframes birds{
+            0%{
+                left: 50%;
+            }
+            100%{
+                left: 1500px;
+                
+            }
+        }   
+    </style>
+</head>
+<body>
+    <h1>Animation Assignment</h1>
+    <hr>
+    <div class="Sky">
+        <div class="cloud" style="font-size: 120px; color: white;">
+            🌧
+        </div>
+        <div class="cloud" style="font-size: 120px; color: white;">
+            🌧
+        </div>
+        <div class="cloud" style="font-size: 120px; color: white;">
+            🌧
+        </div>
+        <div class="birds">🐓🐓</div>
+    </div>
+    
+
+    <div class="road">
+        <div class="car" style="font-size: 150px; height: 150px; width: 200px;  position:relative; left: 0; "> 🚗
+    </div>
+    <div class="bike" style="font-size: 150px; height: 150px; width: 200px;  position:relative; left: 0; ">&#x1F6B2;
+ </div>
+    </div>
+        
+    </div>
+</body>
+</html>

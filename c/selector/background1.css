@@ -1,0 +1,17 @@
+/* div{
+    height: 500px;
+    width: 500px;
+    background-color: aqua;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxqEbUsHieKiKx4mr1ws07GVCa_lneU-qS9Q&s");
+    background-size: 500px 500px;
+    background-repeat: no-repeat;
+} */
+div{
+    height: 800px;
+    width: 100vw;
+    background-color: blue;
+    background-image: url("https://www.shutterstock.com/editorial/image-editorial/M8TfAf0fM9T5Mcz1NTk2Nzk=/ms-dhoni-india-looks-sky-440nw-10331466af.jpg"),url("https://www.shutterstock.com/editorial/image-editorial/M8TfAf0fM9T5Mcz1NTk2Nzk=/ms-dhoni-india-looks-sky-440nw-10331466af.jpg"),url("https://www.shutterstock.com/editorial/image-editorial/M8TfAf0fM9T5Mcz1NTk2Nzk=/ms-dhoni-india-looks-sky-440nw-10331466af.jpg"),url("https://www.shutterstock.com/editorial/image-editorial/M8TfAf0fM9T5Mcz1NTk2Nzk=/ms-dhoni-india-looks-sky-440nw-10331466af.jpg"),url("https://www.shutterstock.com/editorial/image-editorial/M8TfAf0fM9T5Mcz1NTk2Nzk=/ms-dhoni-india-looks-sky-440nw-10331466af.jpg");
+    background-repeat: no-repeat;
+    background-size:200px 200px ;
+    background-position: center,center right,300px 200px,top center,top right,top left,bottom right,bottom left;
+}

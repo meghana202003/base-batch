@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="name" type="text" placeholder="Enter the name"> <br><br>
+    <input id="age" type="text" placeholder="Enter the age"> <br><br>
+    <input id="address" type="text" placeholder="Enter the address"> <br><br>
+    <button onclick="x()">Submit</button>
+    <script>
+        let name = document.querySelector("#name")
+            let age = document.querySelector("#age")
+            let address = document.querySelector("#address")
+function x(){
+            console.log(name.value);
+            console.log(age.value);
+            console.log(address.value);
+    }
+    </script>
+</body>
+</html>

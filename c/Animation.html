@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body>div:nth-child(3)
+        {
+                height:400px;
+                width:400px;
+                background-color: greenyellow;
+                position: absolute;
+                left: 550px;
+                top: 200px;
+                animation-name: champions;
+                animation-duration: 3s;
+                animation-timing-function: linear;
+                animation-delay: 0s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate-reverse;
+            }
+            @keyframes champions{
+                0%{
+                    background-color: aquamarine;
+                }
+                25%{
+                    background-color: blue;
+                    left: 500px;
+                    top: 500px;
+                }
+                50%{
+                    background-color: brown;
+                    left: 300px;
+                    top: 500px;
+                }
+                75%{
+                    background-color: black;
+                    left: 0px;
+                    top: 300px;
+                }
+                100%{
+                    background-color: green;
+                    left: 0px;
+                    top:0px;
+                }
+                from{
+                    background-color:greenyellow;
+                }
+                to{
+                    background-color:red;
+                    border-radius: 50%;
+                    transform: rotate(360deg)
+                }
+            } 
+    </style>
+</head>
+<body>
+    <h1>Animation in CSS</h1>
+    <hr>
+    <div>
+
+    </div>
+</body>
+</html>
