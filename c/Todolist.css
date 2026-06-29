@@ -8,8 +8,8 @@
 body{
     background:#f4f4f4;
     display:flex;
-    justify-content:center;
-    align-items:center;
+    justify-content:rightg;
+    align-items:right;
     height:100vh;
 }
 
