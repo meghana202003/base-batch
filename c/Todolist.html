@@ -3,23 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>My Tasks</title>
+
     <link rel="stylesheet" href="Todolist.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
-    <h1>To-Do List</h1>
+    <div class="container">
 
-    <div class="input-box">
-        <input type="text" id="taskInput" placeholder="Enter a task">
-        <button id="addBtn">Add</button>
+        <h1>✨ My Tasks</h1>
+
+        <div class="input-box">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="What needs to be done?"
+                autocomplete="off"
+            >
+
+            <button id="addBtn">
+                Add Task
+            </button>
+
+        </div>
+
+        <ul id="taskList"></ul>
+
     </div>
 
-    <ul id="taskList"></ul>
-</div>
-
-<script src="Todolist.js"></script>
+    <script src="Todolist.js"></script>
 
 </body>
 </html>

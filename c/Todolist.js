@@ -8,93 +8,130 @@ renderTasks();
 
 addBtn.addEventListener("click", addTask);
 
-taskInput.addEventListener("keypress", function(e){
-    if(e.key==="Enter"){
+taskInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
         addTask();
     }
 });
 
-function addTask(){
+function addTask() {
 
     const text = taskInput.value.trim();
 
-    if(text==="") return;
+    if (!text) return;
+
+    // Prevent duplicates
+    if (tasks.some(task => task.text.toLowerCase() === text.toLowerCase())) {
+        alert("Task already exists");
+        return;
+    }
 
     tasks.push({
-        text:text,
-        completed:false
+        id: Date.now(),
+        text,
+        completed: false,
+        createdAt: new Date().toLocaleString()
     });
 
     saveTasks();
     renderTasks();
 
-    taskInput.value="";
+    taskInput.value = "";
+    taskInput.focus();
 }
 
-function renderTasks(){
+function renderTasks() {
 
-    taskList.innerHTML="";
+    taskList.innerHTML = "";
 
-    tasks.forEach((task,index)=>{
+    tasks.forEach(task => {
 
-        const li=document.createElement("li");
+        const li = document.createElement("li");
 
-        if(task.completed){
+        if (task.completed) {
             li.classList.add("completed");
         }
 
-        const span=document.createElement("span");
-        span.textContent=task.text;
+        const span = document.createElement("span");
 
-        span.addEventListener("click",()=>{
-            tasks[index].completed=!tasks[index].completed;
-            saveTasks();
-            renderTasks();
+        span.innerHTML = `
+            <strong>${task.text}</strong><br>
+            <small>${task.createdAt}</small>
+        `;
+
+        span.addEventListener("click", () => {
+            toggleTask(task.id);
         });
 
-        const actions=document.createElement("div");
-        actions.className="actions";
+        const actions = document.createElement("div");
+        actions.className = "actions";
 
-        const editBtn=document.createElement("button");
-        editBtn.textContent="Edit";
+        const editBtn = createButton("Edit", () => editTask(task.id));
 
-        editBtn.onclick=()=>{
+        const deleteBtn = createButton("Delete", () => deleteTask(task.id));
 
-            const updated=prompt("Edit task",task.text);
+        actions.append(editBtn, deleteBtn);
 
-            if(updated!==null && updated.trim()!==""){
-                tasks[index].text=updated;
-                saveTasks();
-                renderTasks();
-            }
-
-        };
-
-        const deleteBtn=document.createElement("button");
-        deleteBtn.textContent="Delete";
-
-        deleteBtn.onclick=()=>{
-
-            tasks.splice(index,1);
-            saveTasks();
-            renderTasks();
-
-        };
-
-        actions.appendChild(editBtn);
-        actions.appendChild(deleteBtn);
-
-        li.appendChild(span);
-        li.appendChild(actions);
+        li.append(span, actions);
 
         taskList.appendChild(li);
 
     });
-
 }
 
-function saveTasks(){
+function toggleTask(id) {
 
-    localStorage.setItem("tasks",JSON.stringify(tasks));
+    tasks = tasks.map(task =>
+        task.id === id
+            ? { ...task, completed: !task.completed }
+            : task
+    );
+
+    saveTasks();
+    renderTasks();
+}
+
+function editTask(id) {
+
+    const task = tasks.find(t => t.id === id);
+
+    const updated = prompt("Edit Task", task.text);
+
+    if (updated && updated.trim()) {
+
+        task.text = updated.trim();
+
+        saveTasks();
+        renderTasks();
+    }
+}
+
+function deleteTask(id) {
+
+    if (!confirm("Delete this task?")) return;
+
+    tasks = tasks.filter(task => task.id !== id);
+
+    saveTasks();
+    renderTasks();
+}
+
+function createButton(text, handler) {
+
+    const btn = document.createElement("button");
+
+    btn.textContent = text;
+
+    btn.addEventListener("click", handler);
+
+    return btn;
+}
+
+function saveTasks() {
+
+    localStorage.setItem(
+        "tasks",
+        JSON.stringify(tasks)
+    );
 
 }
