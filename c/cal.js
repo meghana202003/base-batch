@@ -28,4 +28,3 @@ clr.addEventListener("click",()=>{
     inp2.value="";
     result.innerText="";
 })  
-
